@@ -1,0 +1,1228 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fffcfc;
+    color: #301016;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* BANNER */
+.hero {
+    width: 100%;
+    overflow: hidden;
+    background: #400811;
+    line-height: 0;
+}
+
+.hero .imagem-hero {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+}
+
+
+/* SOBRE A VINÍCOLA */
+.sobre {
+    padding: 18px 20px 10px;
+    background: #f7edef;
+    color: #f1e7e9;
+    text-align: center;
+}
+
+.sobre-texto {
+    max-width: 760px;
+    margin: 0 auto 10px;
+}
+
+.subtitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 3px;
+    color: #650B16;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.subtitulo::before,
+.subtitulo::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #B99A65;
+}
+
+.sobre-texto h2 {
+    margin: 2px 0 5px;
+    color: #650B16;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+}
+
+.sobre-texto p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.botao-sobre {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 22px;
+    background: transparent;
+    color: #650B16;
+    border: 1px solid #50181d;
+    border-radius: 15px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.botao-sobre:hover {
+    background: #f1dfdf;
+    color: #470b15;
+}
+
+/* BENEFÍCIOS */
+.beneficios {
+    padding: 0 20px 14px;
+    background: #f7edef;
+    color: #650B16;
+    text-align: center;
+}
+
+.beneficios-titulo {
+    display: none;
+}
+
+.beneficios-grade {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.beneficio-card {
+    min-width: 0;
+    padding: 3px 5px;
+}
+
+.beneficio-icone {
+    margin-bottom: 2px;
+    color: #650B16;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.beneficio-card h3 {
+    margin-bottom: 3px;
+    color: #650B16;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.beneficio-card p {
+    color: #0a0001;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .beneficios-grade {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .sobre {
+        padding: 16px 16px 8px;
+    }
+
+    .beneficios {
+        padding: 0 12px 12px;
+    }
+
+    .beneficio-card {
+        padding: 3px 2px;
+    }
+
+    .beneficio-card h3 {
+        font-size: 11px;
+    }
+
+    .beneficio-card p {
+        font-size: 9px;
+    }
+
+    .grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .sobre {
+        padding: 14px 14px 8px;
+    }
+
+    .sobre-texto {
+        margin-bottom: 8px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 21px;
+        margin: 3px 0 5px;
+    }
+
+    .sobre-texto p {
+        font-size: 11px;
+        line-height: 1.55;
+    }
+
+    .subtitulo {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .subtitulo::before,
+    .subtitulo::after {
+        width: 18px;
+    }
+
+    .beneficios {
+        padding: 0 12px 12px;
+    }
+
+    .beneficios-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 8px;
+    }
+
+    .beneficio-card {
+        padding: 2px;
+    }
+
+    .beneficio-icone {
+        font-size: 16px;
+    }
+
+    .beneficio-card h3 {
+        font-size: 11px;
+    }
+
+    .beneficio-card p {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    #catalogo {
+        padding: 35px 15px;
+    }
+
+    .catalogo h2 {
+        font-size: 25px;
+    }
+
+    .grade {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .pesquisa {
+        flex-direction: column;
+    }
+
+    .pesquisa button {
+        width: 100%;
+    }
+}
+
+
+/* CATÁLOGO */
+#catalogo {
+    padding: 45px 20px;
+    scroll-margin-top: 20px;
+}
+
+.catalogo {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2,
+.catalogo h2 {
+    color: #301016;
+    text-align: center;
+}
+
+.catalogo h2 {
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+/* PESQUISA */
+.pesquisa {
+    display: flex;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.pesquisa input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #D8C8B8;
+    border-radius:20px;
+    background: #FFFFFF;
+    color: #301016;
+    font-family: Georgia, serif;
+    font-size: 15px;
+}
+
+.pesquisa input:focus {
+    outline: 2px solid #650B16;
+}
+
+.pesquisa button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #650B16;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+.pesquisa button:hover {
+    background: #400811;
+}
+
+
+/* PRODUTOS */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+.card {
+    min-width: 0;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E8DDD0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(48, 16, 22, 0.08);
+}
+
+.produto {
+    text-align: left;
+}
+
+.produto img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.produto h3 {
+    margin: 18px 0 10px;
+    color: #650B16;
+    font-size: 21px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.produto p {
+    color: #5B4A43;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.produto .preco {
+    margin-top: 18px;
+    color: #650B16;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* CATEGORIAS DE VINHOS */
+.categoria-vinhos {
+    margin-bottom: 45px;
+}
+
+.titulo-categoria {
+    margin: 0 0 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #D7B77C;
+    color: #e4dadb;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+
+/* RODAPÉ */
+footer {
+    padding: 22px 15px;
+    background: #400811;
+    color: #F7F1E8;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p + p {
+    margin-top: 4px;
+    color: #F7F1E8;
+    font-size: 13px;
+}
+
+/* TABLETS */
+
+/* TABLETS */
+@media (max-width: 900px) {
+    .beneficios-grade,
+    .grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .produto img {
+        height: 250px;
+    }
+}
+
+
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .sobre {
+        padding: 18px 12px 14px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 17px;
+    }
+
+    .beneficios {
+        padding: 0 10px 16px;
+    }
+
+    .beneficios-grade {
+        gap: 14px 8px;
+    }
+
+    #catalogo {
+        padding: 35px 15px;
+    }
+
+    .catalogo h2 {
+        font-size: 25px;
+    }
+
+    .grade {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .produto img {
+        height: 280px;
+    }
+
+    .produto h3 {
+        font-size: 20px;
+    }
+
+    .produto p {
+        font-size: 16px;
+    }
+
+    .pesquisa {
+        flex-direction: column;
+    }
+
+    .pesquisa button {
+        width: 100%;
+    }
+}
+
+
+/* =====================================
+   CATÁLOGO DE VINHOS - VALLONTANO
+   Estilo elegante: bordô, bege e dourado
+===================================== */
+
+:root {
+    --vinho-bordo: #301016;
+    --vinho-bordo-escuro: #f7f0f1;
+    --vinho-bege: #f8f3eb;
+    --vinho-dourado: #301016;
+    --vinho-texto: #332a28;
+    --vinho-texto-suave: #756965;
+}
+
+/* Grade de produtos */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: stretch;
+    margin: 28px 0 42px;
+}
+
+/* Cartão de cada vinho */
+.card.produto {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 24px;
+    background: #fffdf9;
+    border: 1px solid #e8dfd2;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(59, 18, 27, 0.07);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(59, 18, 27, 0.13);
+}
+
+
+/* Fotos dos vinhos */
+.card.produto img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto 20px;
+    background: transparent;
+    border-radius: 6px;
+    transform: none;
+}
+
+
+/* Nome do vinho */
+.card.produto h3 {
+    margin: 0 0 12px;
+    color: var(--vinho-bordo);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* Descrição */
+.card.produto p {
+    color: var(--vinho-texto-suave);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 0 16px;
+}
+
+/* Preço em destaque */
+.card.produto .preco-produto {
+    display: block;
+    margin-top: 12px;
+    padding-top: 14px;
+    border-top: 1px solid #e8dfd2;
+    color: var(--vinho-bordo);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* Títulos das categorias */
+.titulo-categoria {
+    margin: 38px 0 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--vinho-dourado);
+    color: var(--vinho-bordo);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 600;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .card.produto {
+        padding: 18px;
+    }
+
+    .card.produto img {
+        height: 240px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .grade {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .card.produto img {
+        height: 280px;
+    }
+
+    .card.produto h3 {
+        font-size: 20px;
+    }
+
+    .titulo-categoria {
+        font-size: 25px;
+    }
+}
+
+/* Área elegante para vinhos sem foto */
+.produto-sem-imagem {
+    width: 100%;
+    height: 280px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: #f8f3eb;
+    border: 1px solid #e8dfd2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #650B16;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.produto-sem-imagem span {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.produto-sem-imagem small {
+    color: #b49a63;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Destaque do preço */
+.card.produto .preco-produto {
+    display: block;
+    margin-top: 12px;
+    padding-top: 14px;
+    border-top: 1px solid #e8dfd2;
+    color: #650B16;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* Carrinho Vallontano */
+
+.carrinho-flutuante {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 1000;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #650B16;
+    border-radius: 50%;
+    background: #650B16;
+    color: #fffdf9;
+    font-size: 21px;
+    cursor: pointer;
+    box-shadow: 0 5px 18px #3b121b26;
+    transition: .25s ease;
+}
+
+.carrinho-flutuante:hover {
+    background: #650B16;
+    transform: translateY(-3px);
+}
+
+#contador {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 20px;
+    padding: 3px;
+    border: 2px solid #650B16;
+    border-radius: 20px;
+    background: #f9f8f8;
+    color: #650B16;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.painel-carrinho[hidden] {
+    display: none;
+}
+
+.painel-carrinho {
+    position: fixed;
+    right: 28px;
+    bottom: 100px;
+    z-index: 1001;
+    width: 340px;
+    max-width: calc(100% - 40px);
+    box-sizing: border-box;
+    padding: 26px;
+    border: 1px solid #e8dfd2;
+    border-radius: 8px;
+    background: #fffdf9;
+    color: #332a28;
+    box-shadow: 0 12px 35px #3b121b20;
+    animation: aparecer-carrinho .2s ease;
+}
+
+.painel-carrinho h2 {
+    margin: 12px 0 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e8dfd2;
+    color: #650B16;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+#fechar-carrinho {
+    float: right;
+    padding: 4px 10px;
+    border: 1px solid #e8dfd2;
+    border-radius: 50px;
+    background: transparent;
+    color: #650B16;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#fechar-carrinho:hover {
+    border-color: #b49a63;
+    background: #f8f3eb;
+}
+
+#itens-carrinho {
+    min-height: 35px;
+    color: #756965;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#subtotal {
+    color: #650B16;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+}
+
+.painel-carrinho > p {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #e8dfd2;
+    color: #756965;
+    font-size: 14px;
+}
+
+@keyframes aparecer-carrinho {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    .carrinho-flutuante {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .painel-carrinho {
+        right: 15px;
+        bottom: 88px;
+        max-width: calc(100% - 30px);
+    }
+}
+
+/* Botão adicionar ao carrinho */
+
+.adicionar-carrinho {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border: 1px solid #650B16;
+    border-radius: 20px;
+    background: #650B16;
+    color: #fffdf9;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .4px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.adicionar-carrinho:hover {
+    border-color: #b49a63;
+    background: #650B16;
+    box-shadow: 0 4px 12px #03000120;
+    transform: translateY(-2px);
+}
+
+.adicionar-carrinho:focus-visible {
+    outline: 2px solid #b49a63;
+    outline-offset: 3px;
+}
+
+.adicionar-carrinho:active {
+    transform: translateY(0);
+}
+
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e8dfd2;
+}
+
+.item-carrinho [data-remover] {
+    flex-shrink: 0;
+    padding: 8px 11px;
+    border: 1px solid #b49a63;
+    border-radius: 20px;
+    background: transparent;
+    color: #5b1f2b;
+    font-family: inherit;
+    font-size: 12px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.item-carrinho [data-remover]:hover {
+    background: #5b1f2b;
+    color: #fffdf9;
+    border-color: #5b1f2b;
+}
+#finalizar-pedido {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #5b1f2b;
+    border-radius: 20px;
+    background: #5b1f2b;
+    color: #fffdf9;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#finalizar-pedido:hover {
+    background: #3b121b;
+    border-color: #b49a63;
+}
+
+.checkout {
+    max-width: 520px;
+    margin: 60px auto;
+    padding: 35px;
+    background: #fffdf9;
+    border: 1px solid #e8dfd2;
+    border-radius: 6px;
+    color: #332a28;
+}
+
+.checkout h1,
+.checkout h2 {
+    color: #5b1f2b;
+}
+
+.checkout form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkout input,
+.checkout select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #d8cdbd;
+    border-radius: 3px;
+    font: inherit;
+}
+
+.checkout button {
+    margin-top: 12px;
+    padding: 14px;
+    border: 1px solid #b49a63;
+    border-radius: 3px;
+    background: #5b1f2b;
+    color: #fffdf9;
+    font: inherit;
+    cursor: pointer;
+}
+
+.checkout button:hover {
+    background: #3b121b;
+}
+
+/* MENU SUPERIOR */
+.menu-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 6%;
+    background: #301016;
+    border-bottom: 1px solid #301016;
+}
+
+.menu-logo {
+    color: #fff8f9;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.menu-links a {
+    color:  #fff8f9;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu-links a:hover {
+    color:  #fff8f9;
+}
+
+.menu-links .menu-admin {
+    color:  #fff8f9;
+    border: 1px solid  #fff8f9;
+    padding: 9px 13px;
+    border-radius: 3px;
+}
+
+@media (max-width: 650px) {
+    .menu-superior {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .menu-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+}
+
+/* ===== AVALIAÇÕES VALLONTANO ===== */
+
+
+.secao-avaliacoes {
+    padding: 28px 6%;
+    background: #f7edef;
+    color: #332a28;
+}
+
+.avaliacoes-cabecalho {
+    text-align: center;
+    margin: 0 auto 24px;
+}
+
+.subtitulo-avaliacoes {
+    color: #650B16;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.avaliacoes-cabecalho h2 {
+    color: #650B16;
+    font-size: 23px;
+    margin: 10px 0 6px;
+}
+
+.avaliacoes-cabecalho p {
+    font-size: 13px;
+    margin: 0;
+}
+
+#lista-avaliacoes {
+    max-width: 700px;
+    margin: 0 auto 22px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card-avaliacao {
+    display: flex;
+    gap: 12px;
+    padding: 0 0 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f7edef;
+    border-radius: 0;
+}
+
+.avaliacao-iniciais {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f7edef;
+    color: #8a5a35;
+    font-size: 12px;
+}
+
+.avaliacao-conteudo {
+    min-width: 0;
+}
+
+.avaliacao-conteudo h3 {
+    margin: 2px 0 3px;
+    color: #650B16;
+    font-size: 14px;
+}
+
+.estrelas {
+    color: #b49a63;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.avaliacao-conteudo p {
+    margin: 6px 0;
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.avaliacao-conteudo small {
+    color: #887d72;
+    font-size: 10px;
+}
+
+.avaliacoes-vazias {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 13px;
+}
+
+.avaliacao-detalhes {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.avaliacao-detalhes summary {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #5b1f2b;
+    border-radius: 20px;
+    color: #650B16;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.avaliacao-detalhes summary::-webkit-details-marker {
+    display: none;
+}
+
+.avaliacao-detalhes summary:hover {
+    background: #650B16;
+    color: #f7edef;
+}
+
+.formulario-avaliacao {
+    box-sizing: border-box;
+    max-width: 480px;
+    margin: 20px auto 0;
+    padding: 20px;
+    text-align: left;
+    background: #f7edef;
+    border: 20px solid #e8dfd2;
+}
+
+.formulario-avaliacao h3 {
+    color: #650B16;
+    font-size: 19px;
+    margin: 0 0 6px;
+}
+
+.formulario-avaliacao > p {
+    font-size: 13px;
+}
+
+.formulario-avaliacao form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formulario-avaliacao label {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.formulario-avaliacao input,
+.formulario-avaliacao select,
+.formulario-avaliacao textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d8cec2;
+    border-radius: 20px;
+    background: #f7edef;
+    color: #332a28;
+    font: inherit;
+    font-size: 13px;
+}
+
+.formulario-avaliacao button {
+    padding: 11px;
+    margin-top: 8px;
+    border: 1px solid #650B16;
+    border-radius: 20px;
+    background: #650B16;
+    color: #f7edef;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .secao-avaliacoes {
+        padding: 25px 5%;
+    }
+
+    .avaliacoes-cabecalho h2 {
+        font-size: 20px;
+    }
+
+    #lista-avaliacoes {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* BOTÃO PARA EXCLUIR AVALIAÇÃO */
+.form-excluir-avaliacao {
+    margin-top: 5px;
+}
+
+.form-excluir-avaliacao button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #8a5a5a;
+    font-size: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-excluir-avaliacao button:hover {
+    color: #650B16;
+}
+
+.itens-comprados {
+    margin: 18px 0;
+    padding: 15px;
+    background: #fcfaf7;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+}
+
+.itens-comprados h4 {
+    margin: 0 0 12px;
+    color: var(--vinho);
+    font-size: 15px;
+}
+
+.itens-comprados ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itens-comprados li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--borda);
+    font-size: 13px;
+}
+
+.itens-comprados li:last-child {
+    border-bottom: 0;
+}
+
+.itens-comprados li span {
+    overflow-wrap: anywhere;
+}
+
+.itens-comprados li strong {
+    color: var(--vinho);
+    white-space: nowrap;
+}
+
+.itens-comprados p {
+    color: var(--suave);
+    font-size: 13px;
+    margin-bottom: 0;
+}
